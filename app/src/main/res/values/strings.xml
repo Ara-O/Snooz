@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Snooz</string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="sign_up_intro">Welcome to Snooz. Let\'s get acquainted!</string>
+    <string name="enter_name_signup_text">Enter Your Name</string>
+    <string name="continue_button_text">Continue</string>
+</resources>
