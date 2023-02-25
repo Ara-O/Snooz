@@ -6,7 +6,9 @@ plugins {
 android {
     namespace 'com.example.snooz'
     compileSdk 33
-
+    buildFeatures {
+        viewBinding = true
+    }
     defaultConfig {
         applicationId "com.example.snooz"
         minSdk 24
@@ -41,4 +43,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.viewpager:viewpager:1.1.0-alpha01'
 }
