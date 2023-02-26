@@ -4,6 +4,8 @@
     <string name="sign_up_intro">Welcome to Snooz. Let\'s get acquainted!</string>
     <string name="enter_name_signup_text">Enter Your Name</string>
     <string name="enter_age_signup_text">Enter Your Age</string>
+    <string name="enter_email_signup_text">Enter Your Email Address</string>
+    <string name="enter_password_signup_text">Enter Your Password</string>
     <string name="already_has_account_text"><u>Already has account</u></string>
     <string name="continue_button_text">Continue</string>
     <string name="cool_text">Cool!</string>
