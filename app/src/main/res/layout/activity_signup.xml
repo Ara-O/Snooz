@@ -88,6 +88,7 @@
         android:fontFamily="@font/poppins_light"
         android:hint="@string/enter_name_signup_text"
         android:inputType="textPersonName"
+        android:autofillHints="name"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -99,6 +100,7 @@
     <EditText
         android:id="@+id/emailInput"
         android:layout_width="211dp"
+        android:autofillHints="emailAddress"
         android:layout_height="45dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#9F9F9F"
@@ -124,6 +126,7 @@
         android:fontFamily="@font/poppins_light"
         android:hint="@string/enter_password_signup_text"
         android:inputType="textPassword"
+        android:autofillHints="password"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
@@ -170,8 +173,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
 
-    <TextView
-        android:id="@+id/textView"
+    <Button
+        android:id="@+id/alreadyHasAccountButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"

@@ -2,7 +2,6 @@ package com.example.snooz
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.snooz.databinding.ActivitySignupBinding
 
@@ -15,24 +14,28 @@ class Signup : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         val view = binding.root
 
-        //Get firebase id
         val storedData = getSharedPreferences("sharedPreferences", MODE_PRIVATE)
         val sharedPreferencesId = storedData.getString("id", "")
 
+
         //Route to main page if user is already signed in
-        if(sharedPreferencesId?.length!! > 0){
+        if(sharedPreferencesId?.length!! != 0){
             val i = Intent(this, MainActivity::class.java)
             startActivity(i)
-
         }
 
         binding.signupButton.setOnClickListener{
-            val i = Intent(this, Signup2::class.java).also{
+            val i = Intent(this, SignupExtra::class.java).also{
                 it.putExtra("fullName", binding.fullNameInput.text.toString())
                 it.putExtra("age", binding.ageInput.text.toString())
                 it.putExtra("emailAddress", binding.emailInput.text.toString())
                 it.putExtra("password", binding.passwordInput.text.toString())
             }
+            startActivity(i)
+        }
+
+        binding.alreadyHasAccountButton.setOnClickListener {
+            val i = Intent(this, Login::class.java)
             startActivity(i)
         }
         setContentView(view)

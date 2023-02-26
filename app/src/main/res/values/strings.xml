@@ -1,13 +1,16 @@
 <resources>
     <string name="app_name">Snooz</string>
     <string name="sign_up_text">Sign Up</string>
+    <string name="log_in_text">Log In</string>
     <string name="sign_up_intro">Welcome to Snooz. Let\'s get acquainted!</string>
+    <string name="log_in_intro">Welcome back!</string>
     <string name="enter_name_signup_text">Enter Your Name</string>
     <string name="enter_age_signup_text">Enter Your Age</string>
     <string name="enter_email_signup_text">Enter Your Email Address</string>
     <string name="enter_password_signup_text">Enter Your Password</string>
     <string name="already_has_account_text"><u>Already has account</u></string>
     <string name="continue_button_text">Continue</string>
+    <string name="make_an_account_text"><u>Make an account</u></string>
     <string name="cool_text">Cool!</string>
     <string name="more_questions_text">We got some more questions for you</string>
     <string name="fall_asleep_text">What time do you want to fall asleep?</string>

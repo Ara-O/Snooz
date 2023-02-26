@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Snooz"
         tools:targetApi="31">
         <activity
-            android:name=".Signup2"
+            android:name=".SignupExtra"
             android:exported="false" />
         <activity
             android:name=".Signup"
