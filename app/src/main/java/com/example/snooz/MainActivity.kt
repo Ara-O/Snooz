@@ -42,16 +42,16 @@ class MainActivity : AppCompatActivity() {
                 Log.d("eee", currentUser.toString())
             }
         })
+//
+//        findViewById<Button>(R.id.begone).setOnClickListener{
+//            val edit = getSharedPreferences("sharedPreferences", MODE_PRIVATE).edit()
+//            edit.remove("id")
+//            edit.apply()
+//            Firebase.auth.signOut()
+//
+//            Log.d("wewew", auth.currentUser.toString())
+//
+//        }
 
-        findViewById<Button>(R.id.begone).setOnClickListener{
-            val edit = getSharedPreferences("sharedPreferences", MODE_PRIVATE).edit()
-            edit.remove("id")
-            edit.apply()
-            Firebase.auth.signOut()
-
-            Log.d("wewew", auth.currentUser.toString())
-
-        }
-
-    }
+   }
 }

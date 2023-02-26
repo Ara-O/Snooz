@@ -18,4 +18,11 @@
     <string name="lets_get_started_button_text">Let\'s get started</string>
     <string name="hour_text">Hour</string>
     <string name="minute_text">Minutes</string>
+    <string name="main_welcome_text">Welcome Ara! It is Sunday 23:00pm</string>
+    <string name="add_dream_text">Add Dream</string>
+    <string name="view_all_dreams_text">View All Dream</string>
+    <string name="log_out_text">Log Out</string>
+    <string name="quick_add_text">Quick Add</string>
+    <string name="dream_name_text">Dream Name</string>
+    <string name="dream_tag_text">Dream Tag</string>
 </resources>

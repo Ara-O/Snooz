@@ -36,6 +36,9 @@ class Login : AppCompatActivity() {
                         Log.d(TAG, "signInWithEmail:success")
                         val user = auth.currentUser
 
+                        Toast.makeText(baseContext, "You're in!",
+                            Toast.LENGTH_SHORT).show()
+
                         //Route to main page
                         val i = Intent(this, MainActivity::class.java)
                         startActivity(i)
