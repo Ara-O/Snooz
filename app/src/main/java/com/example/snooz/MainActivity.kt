@@ -5,17 +5,27 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import com.example.snooz.databinding.ActivityMainBinding
+import com.example.snooz.databinding.ActivitySignupExtraBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+
+        setContentView(view)
 
         //Initilize authentication
         auth = Firebase.auth
@@ -43,15 +53,35 @@ class MainActivity : AppCompatActivity() {
             }
         })
 //
-//        findViewById<Button>(R.id.begone).setOnClickListener{
-//            val edit = getSharedPreferences("sharedPreferences", MODE_PRIVATE).edit()
-//            edit.remove("id")
-//            edit.apply()
-//            Firebase.auth.signOut()
-//
-//            Log.d("wewew", auth.currentUser.toString())
-//
-//        }
+        binding.logOutButton.setOnClickListener{
+            val edit = getSharedPreferences("sharedPreferences", MODE_PRIVATE).edit()
+            edit.remove("id")
+            edit.apply()
+            Firebase.auth.signOut()
 
+            Log.d("wewew", auth.currentUser.toString())
+
+        }
+
+        binding.addDreamButton.setOnClickListener {
+            supportFragmentManager.commit {
+                replace<AddDreamFragment>(R.id.fragmentContainerView)
+                setReorderingAllowed(true)
+                addToBackStack("name") // name can be null
+            }
+        }
+
+        binding.viewAllDreamsButton.setOnClickListener {
+//            val fragmentManager: FragmentManager = supportFragmentManager
+//            fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, AddDreamFragment::class.java, null)
+//                .setReorderingAllowed(true)
+//                .addToBackStack("name").commit()
+            supportFragmentManager.commit {
+                replace<ViewAllDreamsFragment>(R.id.fragmentContainerView)
+                setReorderingAllowed(true)
+                addToBackStack("name") // name can be null
+            }
+
+        }
    }
 }
