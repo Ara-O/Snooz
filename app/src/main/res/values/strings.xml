@@ -8,13 +8,13 @@
     <string name="enter_age_signup_text">Enter Your Age</string>
     <string name="enter_email_signup_text">Enter Your Email Address</string>
     <string name="enter_password_signup_text">Enter Your Password</string>
-    <string name="already_has_account_text"><u>Already has account</u></string>
+    <string name="already_has_account_text"><u>I already have an account</u></string>
     <string name="continue_button_text">Continue</string>
-    <string name="make_an_account_text"><u>Make an account</u></string>
+    <string name="make_an_account_text"><u>I don\'t have an account</u></string>
     <string name="cool_text">Cool!</string>
-    <string name="more_questions_text">We got some more questions for you</string>
-    <string name="fall_asleep_text">What time do you want to fall asleep?</string>
-    <string name="wake_up_text">What time do you want to wake up?</string>
+    <string name="more_questions_text"><u>We got some more questions for you</u></string>
+    <string name="fall_asleep_text"><u>What time do you want to fall asleep?</u></string>
+    <string name="wake_up_text"><u>What time do you want to wake up?</u></string>
     <string name="lets_get_started_button_text">Let\'s get started</string>
     <string name="hour_text">Hour</string>
     <string name="minute_text">Minutes</string>
@@ -25,6 +25,6 @@
     <string name="quick_add_text">Quick Add</string>
     <string name="dream_name_text">Dream Name</string>
     <string name="dream_tag_text">Dream Tag</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="enter_dream_here_text">Enter Dream Here</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

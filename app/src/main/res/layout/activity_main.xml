@@ -1,94 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_activity_background_gradient"
-    tools:context=".MainActivity">
+    android:background="#000000"
+    >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/main_welcome_text"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".MainActivity">
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="361dp"
+            android:layout_height="232dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/stars_foreground" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/main_welcome_text"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <!--        android:drawableLeft="@mipmap/add_icon_foreground"-->
-
-
-    <Button
-        android:id="@+id/viewAllDreamsButton"
-        android:layout_width="156dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="56dp"
-        android:backgroundTint="#252525"
-        android:fontFamily="@font/poppins"
-        android:letterSpacing="0.0111"
-        android:text="@string/view_all_dreams_text"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/addDreamButton"
-        android:layout_width="156dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#252525"
-        android:fontFamily="@font/poppins"
-        android:letterSpacing="0.0111"
-        android:text="@string/add_dream_text"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toStartOf="@+id/viewAllDreamsButton"
-        app:layout_constraintHorizontal_bias="0.744"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/logOutButton"
-        android:layout_width="156dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#252525"
-        android:fontFamily="@font/poppins"
-        android:letterSpacing="0.0111"
-        android:text="@string/log_out_text"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewAllDreamsButton" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.snooz.AddDreamFragment"
-        android:layout_width="322dp"
-        android:layout_height="599dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logOutButton"
-        tools:layout="@layout/fragment_add_dream" />
+        <!--        android:drawableLeft="@mipmap/add_icon_foreground"-->
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/viewAllDreamsButton"
+            android:layout_width="156dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="56dp"
+            android:backgroundTint="#252525"
+            android:fontFamily="@font/poppins"
+            android:letterSpacing="0.0111"
+            android:text="@string/view_all_dreams_text"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/addDreamButton"
+            android:layout_width="156dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#252525"
+            android:fontFamily="@font/poppins"
+            android:letterSpacing="0.0111"
+            android:text="@string/add_dream_text"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toStartOf="@+id/viewAllDreamsButton"
+            app:layout_constraintHorizontal_bias="0.744"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <Button
+            android:id="@+id/logOutButton"
+            android:layout_width="156dp"
+            android:layout_height="53dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#252525"
+            android:fontFamily="@font/poppins"
+            android:letterSpacing="0.0111"
+            android:text="@string/log_out_text"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.125"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewAllDreamsButton" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.example.snooz.AddDreamFragment"
+            android:layout_width="380dp"
+            android:layout_height="585dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logOutButton"
+            tools:layout="@layout/fragment_add_dream" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -13,45 +13,19 @@
         android:background="@drawable/background_gradient"
         tools:context=".Signup">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="851dp"
-            android:layout_height="599dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/cloud_background_layer" />
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="449dp"
-            android:layout_height="403dp"
-            android:layout_marginStart="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@mipmap/stars_foreground" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="361dp"
-            android:layout_height="307dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            app:srcCompat="@mipmap/stars_foreground" />
 
         <LinearLayout
             android:id="@+id/linearLayout2"
-            android:layout_width="416dp"
-            android:layout_height="64dp"
+            android:layout_width="279dp"
+            android:layout_height="48dp"
             android:layout_marginTop="12dp"
-            android:gravity="center"
+            android:gravity="start"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintHorizontal_bias="0.401"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5">
+
 
             <EditText
                 android:id="@+id/currentSleepTimeHour"
@@ -65,7 +39,6 @@
                 android:textColor="#FFFFFF"
                 android:textColorHint="#FFFFFF"
                 android:textSize="14sp" />
-
 
             <EditText
                 android:id="@+id/currentSleepTimeMinutes"
@@ -84,12 +57,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="416dp"
-            android:layout_height="64dp"
+            android:layout_width="247dp"
+            android:layout_height="48dp"
             android:layout_marginTop="12dp"
-            android:gravity="center"
+            android:gravity="center|start"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.323"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6">
 
@@ -122,37 +96,21 @@
 
         </LinearLayout>
 
-
         <TextView
             android:id="@+id/sign_up_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
+            android:layout_marginTop="136dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/cool_text"
             android:textColor="#FFFFFF"
             android:textSize="33sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.188"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="238dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/poppins_light"
-            android:gravity="center"
-            android:text="@string/more_questions_text"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sign_up_textview" />
-
-<!--        <TextView-->
+        <!--        <TextView-->
 <!--            android:id="@+id/textView"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
@@ -166,10 +124,27 @@
 <!--            app:layout_constraintTop_toBottomOf="@+id/registerButton" />-->
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="282dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_light"
+            android:gravity="center"
+            android:text="@string/more_questions_text"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_textview" />
+
+
+        <TextView
             android:id="@+id/editTextTextPersonName5"
-            android:layout_width="290dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="288dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="24dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:text="@string/fall_asleep_text"
@@ -177,33 +152,33 @@
             android:textColorHint="#FFFFFF"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.447"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         <TextView
             android:id="@+id/editTextTextPersonName6"
-            android:layout_width="290dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="24dp"
+            android:layout_width="291dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="32dp"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:text="@string/wake_up_text"
-            android:textAlignment="center"
+            android:textAlignment="viewStart"
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/registerButton"
-            android:layout_width="159dp"
-            android:layout_height="38dp"
+            android:layout_width="290dp"
+            android:layout_height="48dp"
             android:layout_marginTop="52dp"
-            android:background="@drawable/rounded_corner_buttons"
-            android:backgroundTint="#19001D"
+            android:background="@drawable/rounded_corners_darkgray_background"
             android:fontFamily="@font/poppins"
             android:paddingLeft="22sp"
             android:paddingTop="4sp"
@@ -212,8 +187,9 @@
             android:text="@string/lets_get_started_button_text"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="11sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.438"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 

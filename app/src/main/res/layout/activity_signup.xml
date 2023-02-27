@@ -7,186 +7,216 @@
     android:background="#000000"
     >
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_gradient"
-    tools:context=".Signup">
-
-    <!--    <ImageView-->
-    <!--        android:id="@+id/imageView4"-->
-    <!--        android:layout_width="211dp"-->
-    <!--        android:layout_height="184dp"-->
-    <!--        android:layout_marginTop="52dp"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.505"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:srcCompat="@mipmap/moon_image_foreground" />-->
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="851dp"
-        android:layout_height="599dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/cloud_background_layer" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="449dp"
-        android:layout_height="403dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/stars_foreground" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="449dp"
-        android:layout_height="403dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/stars_foreground" />
-
-    <TextView
-        android:id="@+id/sign_up_textview"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="@string/sign_up_text"
-        android:textColor="#FFFFFF"
-        android:textSize="33sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/black"
+        tools:context=".Signup">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="320dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/sign_up_intro"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_textview" />
+        <!--    <ImageView-->
+        <!--        android:id="@+id/imageView4"-->
+        <!--        android:layout_width="211dp"-->
+        <!--        android:layout_height="184dp"-->
+        <!--        android:layout_marginTop="52dp"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintHorizontal_bias="0.505"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent"-->
+        <!--        app:srcCompat="@mipmap/moon_image_foreground" />-->
 
-    <EditText
-        android:id="@+id/fullNameInput"
-        android:layout_width="211dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#9F9F9F"
-        android:ems="10"
-        android:fontFamily="@font/poppins_light"
-        android:hint="@string/enter_name_signup_text"
-        android:inputType="textPersonName"
-        android:autofillHints="name"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <!--    <ImageView-->
+        <!--        android:id="@+id/imageView"-->
+        <!--        android:layout_width="851dp"-->
+        <!--        android:layout_height="599dp"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:layout_constraintTop_toTopOf="parent"-->
+        <!--        app:srcCompat="@mipmap/cloud_background_layer" />-->
 
-    <EditText
-        android:id="@+id/emailInput"
-        android:layout_width="211dp"
-        android:autofillHints="emailAddress"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#9F9F9F"
-        android:ems="10"
-        android:fontFamily="@font/poppins_light"
-        android:hint="@string/enter_email_signup_text"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageInput" />
+        <!--    <ImageView-->
+        <!--        android:id="@+id/imageView2"-->
+        <!--        android:layout_width="449dp"-->
+        <!--        android:layout_height="403dp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:srcCompat="@mipmap/stars_foreground" />-->
 
-    <EditText
-        android:id="@+id/passwordInput"
-        android:layout_width="211dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#9F9F9F"
-        android:ems="10"
-        android:fontFamily="@font/poppins_light"
-        android:hint="@string/enter_password_signup_text"
-        android:inputType="textPassword"
-        android:autofillHints="password"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+        <!--    <ImageView-->
+        <!--        android:id="@+id/imageView3"-->
+        <!--        android:layout_width="449dp"-->
+        <!--        android:layout_height="403dp"-->
+        <!--        android:layout_marginBottom="220dp"-->
+        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--        app:layout_constraintEnd_toEndOf="parent"-->
+        <!--        app:layout_constraintStart_toStartOf="parent"-->
+        <!--        app:srcCompat="@mipmap/stars_foreground" />-->
 
-    <EditText
-        android:id="@+id/ageInput"
-        android:layout_width="208dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="24dp"
-        android:backgroundTint="#9F9F9F"
-        android:ems="10"
-        android:fontFamily="@font/poppins_light"
-        android:hint="@string/enter_age_signup_text"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullNameInput" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="184dp"
+            android:layout_height="175dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@mipmap/stars_foreground" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/signup_button"
-        android:layout_width="123dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/rounded_corner_buttons"
-        android:backgroundTint="#19001D"
-        android:fontFamily="@font/poppins"
-        android:paddingLeft="22sp"
-        android:paddingTop="4sp"
-        android:paddingRight="22sp"
-        android:paddingBottom="4sp"
-        android:text="@string/continue_button_text"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+        <TextView
+            android:id="@+id/sign_up_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="152dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="@string/sign_up_text"
+            android:textColor="#FFFFFF"
+            android:textSize="33sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/alreadyHasAccountButton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="@string/already_has_account_text"
-        android:textColor="#FFFFFF"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signup_button" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="320dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/sign_up_intro"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sign_up_textview" />
+
+        <EditText
+            android:id="@+id/fullNameInput"
+            android:layout_width="290dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:autofillHints="name"
+            android:backgroundTint="#9F9F9F"
+            android:ems="10"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/enter_name_signup_text"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <EditText
+            android:id="@+id/emailInput"
+            android:layout_width="290dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:autofillHints="emailAddress"
+            android:backgroundTint="#9F9F9F"
+            android:ems="10"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/enter_email_signup_text"
+            android:inputType="textEmailAddress"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageInput" />
+
+        <EditText
+            android:id="@+id/passwordInput"
+            android:layout_width="290dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:autofillHints="password"
+            android:backgroundTint="#9F9F9F"
+            android:ems="10"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/enter_password_signup_text"
+            android:inputType="textPassword"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+
+        <EditText
+            android:id="@+id/ageInput"
+            android:layout_width="290dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#9F9F9F"
+            android:ems="10"
+            android:fontFamily="@font/poppins_light"
+            android:hint="@string/enter_age_signup_text"
+            android:inputType="textPersonName"
+            android:textAlignment="viewStart"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fullNameInput" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_button"
+            android:layout_width="290dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_corners_darkgray_background"
+            android:fontFamily="@font/poppins"
+            android:paddingLeft="22sp"
+            android:paddingTop="4sp"
+            android:paddingRight="22sp"
+            android:paddingBottom="4sp"
+            android:text="@string/continue_button_text"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+        <Button
+            android:id="@+id/alreadyHasAccountButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/already_has_account_text"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.13"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signup_button" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="169dp"
+            android:layout_height="169dp"
+            android:layout_marginStart="292dp"
+            android:layout_marginBottom="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/sign_up_textview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@mipmap/moon_image_foreground" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
