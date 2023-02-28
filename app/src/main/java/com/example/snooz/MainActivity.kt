@@ -1,18 +1,13 @@
 package com.example.snooz
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
-import android.widget.Button
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.example.snooz.databinding.ActivityMainBinding
-import com.example.snooz.databinding.ActivitySignupExtraBinding
-import com.google.firebase.auth.FirebaseAuth
+ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
