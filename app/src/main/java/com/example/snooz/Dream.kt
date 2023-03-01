@@ -17,8 +17,6 @@ package com.example.snooz
 //
 //}
 
-data class Dream(val name:String = "", val tag: String = "", val text: String = "") {
-//    constructor(allObj: Any?) : this(){
-//        allObj.name
-//    }
+data class Dream(val dreamId: String = "", val name:String = "", val tag: String = "", val text: String = "") {
+
 }

@@ -40,7 +40,6 @@
         <!--        app:layout_constraintBottom_toBottomOf="parent"-->
         <!--        app:layout_constraintStart_toStartOf="parent"-->
         <!--        app:srcCompat="@mipmap/stars_foreground" />-->
-
         <!--    <ImageView-->
         <!--        android:id="@+id/imageView3"-->
         <!--        android:layout_width="449dp"-->

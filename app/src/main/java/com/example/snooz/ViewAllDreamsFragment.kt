@@ -34,22 +34,24 @@ class ViewAllDreamsFragment : Fragment() {
         val storedData = activity?.getSharedPreferences("sharedPreferences", AppCompatActivity.MODE_PRIVATE)
         val sharedPreferencesId = storedData?.getString("id", "")
 
-        val databaseDreamsReference = database.child("${sharedPreferencesId}/dreams")
 
+        //If there is a change to the firebase data, update the recyclerview
         runBlocking {
+            val databaseDreamsReference = database.child("${sharedPreferencesId}/dreams")
             val dreamsListener = object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     myDataset.clear()
-                    myDataset.add(Dream("dream 2", "dream 2 tag", "this is dream 2"))
-                    myDataset.add(Dream("dream 3", "dream 3 tag", "this is dream 3"))
+                    myDataset.add(Dream("1323131212vwdx", "dream 2", "dream 2 tag", "this is dream 2"))
+                    myDataset.add(Dream("wss33fv32esc","dream 3", "dream 3 tag", "this is dream 3"))
                     for (dream in dataSnapshot.children) {
 
-                        val dream = Dream(
+                        val dreamAdded = Dream(
+                            dream.key.toString(),
                             dream.getValue<Dream>()?.name.toString(),
                             dream.getValue<Dream>()?.tag.toString(),
-                            dream.getValue<Dream>()?.text.toString()
+                            dream.getValue<Dream>()?.text.toString(),
                         )
-                        myDataset.add(dream)
+                        myDataset.add(dreamAdded)
                     }
 
                     val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)

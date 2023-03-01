@@ -66,6 +66,7 @@
             android:hint="@string/enter_dream_here_text"
             android:textColor="#BFBFBF"
             android:textSize="11.5sp"
+
            />
 
         <androidx.appcompat.widget.AppCompatButton
