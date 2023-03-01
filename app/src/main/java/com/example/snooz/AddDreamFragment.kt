@@ -11,7 +11,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class Dream{
+class DreamData{
     var name = ""
     var tag = ""
     var text = ""
@@ -42,7 +42,7 @@ class AddDreamFragment : Fragment() {
 
         //once the user clicks the button, push the data to firebase
         _binding!!.addDreamButton.setOnClickListener {
-            val currentDreamData = Dream(binding.dreamNameInput.text.toString(), binding.dreamTagInput.text.toString(), binding.dreamTextInput.text.toString());
+            val currentDreamData = DreamData(binding.dreamNameInput.text.toString(), binding.dreamTagInput.text.toString(), binding.dreamTextInput.text.toString());
             database.child("/${sharedPreferencesId}/dreams").push().setValue(currentDreamData)
         }
         return view

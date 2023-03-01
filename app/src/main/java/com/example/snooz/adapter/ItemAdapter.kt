@@ -6,15 +6,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.snooz.Dream
 import com.example.snooz.R
 import com.example.snooz.ViewAllDreamsFragment
 
 class ItemAdapter(
-    private val dataset: List<String>
+    private val dataset: List<Dream>
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
+        val textViewTag: TextView = view.findViewById(R.id.item_tag)
+        val textViewDream: TextView = view.findViewById(R.id.item_dream)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -31,6 +34,9 @@ class ItemAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
 //        holder.textView.text = context.resources.getString(item.stringResourceId)
-        holder.textView.text = item
+        holder.textView.text = item.name
+        holder.textViewTag.text = item.tag
+        holder.textViewDream.text = item.text
+
     }
 }
