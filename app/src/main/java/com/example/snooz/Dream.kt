@@ -17,6 +17,6 @@ package com.example.snooz
 //
 //}
 
-data class Dream(val dreamId: String = "", val name:String = "", val tag: String = "", val text: String = "") {
+data class Dream(val dreamId: String = "", val name:String = "", val tag: String = "", val text: String = "", val date: String = "") {
 
 }

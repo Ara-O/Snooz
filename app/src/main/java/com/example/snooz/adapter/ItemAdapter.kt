@@ -34,6 +34,7 @@ class ItemAdapter(
         val textViewTag: TextView = view.findViewById(R.id.item_tag)
         val textViewDream: TextView = view.findViewById(R.id.item_dream)
         val deleteBtn: Button = view.findViewById(R.id.deleteDreamButton)
+        val textViewDate: Button = view.findViewById(R.id.dateButton)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -52,13 +53,14 @@ class ItemAdapter(
         holder.textView.text = item.name
         holder.textViewTag.text = item.tag
         holder.textViewDream.text = item.text
+        holder.textViewDate.text = "Date: ${item.date}"
         holder.deleteBtn.setOnClickListener {
             Log.d("dream id clicked ", item.dreamId)
             database = Firebase.database.reference
 
             val builder = AlertDialog.Builder(adapterLayout.context)
-            builder.setTitle("Androidly Alert")
-            builder.setMessage("We have a message")
+            builder.setTitle("Warning!")
+            builder.setMessage("Are you sure you want to delete this dream?")
             builder.setPositiveButton("Delete dream") { dialog, which ->
                 Toast.makeText(adapterLayout.context,
                     "Delete Dream", Toast.LENGTH_SHORT).show()

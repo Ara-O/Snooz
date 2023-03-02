@@ -1,27 +1,66 @@
 package com.example.snooz
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.example.snooz.databinding.ActivityMainBinding
- import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.runBlocking
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding: ActivityMainBinding
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        database = Firebase.database.reference
+
         try {
             super.onCreate(savedInstanceState)
             binding = ActivityMainBinding.inflate(layoutInflater)
             val view = binding.root
 
             setContentView(view)
+
+            val fullNameReference = database.child("/${Firebase.auth.uid}/fullName")
+            var userFullName:String = ""
+
+            runOnUiThread {
+            val fullNameListener = object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // Get Post object and use the values to update the UI
+                    userFullName = dataSnapshot.value.toString()
+                    val dateTime = Calendar.getInstance().time
+                    val formatter = SimpleDateFormat("EEEE HH:mm a", Locale.ENGLISH)
+                    val formattedDateTime = formatter.format(dateTime)
+
+                    binding.welcomeTextView.setText("Welcome ${userFullName}! It is ${formattedDateTime}")
+
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                    // Getting Post failed, log a message
+                    Log.w("ERROR", "loadPost:onCancelled", databaseError.toException())
+                }
+            }
+
+            fullNameReference.addValueEventListener(fullNameListener)
+            }
+
+
 
             //Initilize authentication
             auth = Firebase.auth
