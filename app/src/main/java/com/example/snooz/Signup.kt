@@ -40,7 +40,5 @@ class Signup : AppCompatActivity() {
         }
         setContentView(view)
 
-
-
     }
 }

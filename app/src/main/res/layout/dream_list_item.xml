@@ -72,7 +72,8 @@
                 android:fontFamily="@font/poppins_medium"
                 android:text="Delete Dream"
                 android:textColor="#FFFFFF"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                android:textAllCaps="false"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/dateButton"

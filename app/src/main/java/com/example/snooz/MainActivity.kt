@@ -52,8 +52,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
-                    // Getting Post failed, log a message
-                    Log.w("ERROR", "loadPost:onCancelled", databaseError.toException())
+                    Log.w("ERROR", "Error -", databaseError.toException())
                 }
             }
 

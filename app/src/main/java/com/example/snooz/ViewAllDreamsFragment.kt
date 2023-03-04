@@ -41,8 +41,6 @@ class ViewAllDreamsFragment : Fragment() {
             val dreamsListener = object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     myDataset.clear()
-                    myDataset.add(Dream("1323131212vwdx", "dream 2", "dream 2 tag", "this is dream 2", "10/10/2020"))
-                    myDataset.add(Dream("wss33fv32esc","dream 3", "dream 3 tag", "this is dream 3", "10/10/2020"))
                     for (dream in dataSnapshot.children) {
 
                         val dreamAdded = Dream(

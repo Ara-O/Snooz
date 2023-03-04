@@ -54,23 +54,36 @@
         <EditText
             android:id="@+id/dreamTextInput"
             android:layout_width="338dp"
-            android:layout_height="302dp"
+            android:layout_height="238dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/rounded_corners_darkgray_background"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
             android:gravity="center|top"
-            android:inputType="textAutoCorrect"
-            android:paddingTop="20sp"
-            android:textColorHint="#BFBFBF"
             android:hint="@string/enter_dream_here_text"
+            android:inputType="textMultiLine"
+            android:paddingTop="20sp"
+            android:scrollHorizontally="false"
             android:textColor="#BFBFBF"
+            android:textColorHint="#BFBFBF"
             android:textSize="11.5sp"
 
-           />
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/autocomplete_dream_button"
+            android:textAllCaps="false"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/rounded_corners_darkgray_background"
+            android:fontFamily="@font/poppins"
+            android:text="@string/autocorrect_dream"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/add_dream_button"
+            android:textAllCaps="false"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20sp"

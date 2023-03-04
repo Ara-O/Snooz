@@ -17,8 +17,6 @@ class SignupExtra : AppCompatActivity() {
     private lateinit var binding: ActivitySignupExtraBinding
     private lateinit var database: DatabaseReference
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupExtraBinding.inflate(layoutInflater)
