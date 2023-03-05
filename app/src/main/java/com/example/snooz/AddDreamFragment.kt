@@ -2,6 +2,7 @@ package com.example.snooz
 
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.aallam.openai.api.ExperimentalOpenAI
 import com.aallam.openai.api.completion.CompletionRequest
@@ -21,6 +23,7 @@ import com.aallam.openai.api.model.Model
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
 import com.example.snooz.databinding.FragmentAddDreamBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -73,15 +76,22 @@ class AddDreamFragment : Fragment() {
 
         //once the user clicks the button, push the data to firebase
         _binding!!.addDreamButton.setOnClickListener {
+            if(binding.dreamNameInput.text.isEmpty() || binding.dreamTextInput.text.isEmpty() || binding.dreamTagInput.text.isEmpty()){
+                Snackbar.make(binding.addDreamLayout, "There are some empty fields", Snackbar.LENGTH_LONG).setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.dark_gray)).setTextColor(ContextCompat.getColor(
+                    requireActivity(), R.color.white)).show()
 
-            val currentDreamData = DreamData(binding.dreamNameInput.text.toString(), binding.dreamTagInput.text.toString(), binding.dreamTextInput.text.toString(), formattedDateTime);
-            database.child("/${sharedPreferencesId}/dreams").push().setValue(currentDreamData)
+            }else {
+                val currentDreamData = DreamData(binding.dreamNameInput.text.toString(), binding.dreamTagInput.text.toString(), binding.dreamTextInput.text.toString(), formattedDateTime);
+                database.child("/${sharedPreferencesId}/dreams").push().setValue(currentDreamData)
 
-            Toast.makeText(context, "Dream added successfully",
-                Toast.LENGTH_SHORT).show()
-            binding.dreamNameInput.text.clear()
-            binding.dreamTagInput.text.clear()
-            binding.dreamTextInput.text.clear()
+                Snackbar.make(binding.addDreamLayout, "Dream Added Successfully", Snackbar.LENGTH_LONG).setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.dark_gray)).setTextColor(ContextCompat.getColor(
+                    requireActivity(), R.color.white)).show()
+
+                binding.dreamNameInput.text.clear()
+                binding.dreamTagInput.text.clear()
+                binding.dreamTextInput.text.clear()
+                binding.dreamImage.visibility = View.GONE
+            }
         }
 
         _binding!!.autocompleteDreamButton.setOnClickListener{
@@ -103,7 +113,6 @@ class AddDreamFragment : Fragment() {
     }
 
     private suspend fun autocompleteDream(openAI: OpenAI, dream: String){
-
         val autocorrectResult = openAI.edit(
             request = EditsRequest(
                 model = ModelId("text-davinci-edit-001"),
@@ -128,5 +137,6 @@ class AddDreamFragment : Fragment() {
         )
 
         Picasso.get().load(images[0].url).into(binding.dreamImage);
+        binding.dreamImage.visibility = View.VISIBLE
     }
 }

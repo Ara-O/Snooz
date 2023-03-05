@@ -7,6 +7,7 @@
 
     >
 <FrameLayout
+    android:id="@+id/addDreamLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/black"
@@ -93,18 +94,6 @@
             android:textSize="11sp" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/add_dream_button"
-            android:textAllCaps="false"
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20sp"
-            android:background="@drawable/rounded_corners_darkgray_background"
-            android:fontFamily="@font/poppins"
-            android:text="@string/add_dream_text"
-            android:textColor="#FFFFFF"
-            android:textSize="11sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/dream_image_button"
             android:textAllCaps="false"
             android:layout_width="340dp"
@@ -116,13 +105,27 @@
             android:textColor="#FFFFFF"
             android:textSize="11sp" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add_dream_button"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/rounded_corners_darkgray_background"
+            android:fontFamily="@font/poppins"
+            android:text="@string/add_dream_text"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
         <ImageView
             android:id="@+id/dreamImage"
+            android:visibility="invisible"
             android:layout_width="340dp"
             android:layout_height="257dp"
             android:layout_marginTop="20sp"
             android:layout_marginBottom="20sp"
-            android:maxLines="10"></ImageView>
+            android:maxLines="10"
+            android:contentDescription="@string/dream_visualization_image" />
     </LinearLayout>
 </FrameLayout>
 </ScrollView>

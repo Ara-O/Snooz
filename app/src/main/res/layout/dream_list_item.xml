@@ -70,7 +70,7 @@
                 android:background="@drawable/rounded_corners_darkgray_background"
                 android:backgroundTint="#4E4E4E"
                 android:fontFamily="@font/poppins_medium"
-                android:text="Delete Dream"
+                android:text="@string/delete_dream_text"
                 android:textColor="#FFFFFF"
                 android:textSize="10sp"
                 android:textAllCaps="false"/>
@@ -79,6 +79,7 @@
                 android:id="@+id/dateButton"
                 android:layout_width="117dp"
                 android:layout_height="37dp"
+                android:textAllCaps="false"
                 android:layout_marginLeft="15dp"
                 android:background="@drawable/rounded_corners_darkgray_background"
                 android:backgroundTint="#4E4E4E"
