@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/black"
     tools:context=".AddDreamFragment">
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
@@ -29,11 +35,13 @@
             android:background="@drawable/rounded_corners_darkgray_background"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
-            android:inputType="textPersonName"
             android:hint="@string/dream_name_text"
-            android:textColorHint="#BFBFBF"
+            android:inputType="textPersonName"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
             android:textAlignment="center"
             android:textColor="#BFBFBF"
+            android:textColorHint="#BFBFBF"
             android:textSize="11.5sp" />
 
         <EditText
@@ -44,11 +52,13 @@
             android:background="@drawable/rounded_corners_darkgray_background"
             android:ems="10"
             android:fontFamily="@font/poppins_light"
-            android:inputType="textPersonName"
             android:hint="@string/dream_tag_text"
-            android:textColorHint="#BFBFBF"
+            android:inputType="textPersonName"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
             android:textAlignment="center"
             android:textColor="#BFBFBF"
+            android:textColorHint="#BFBFBF"
             android:textSize="11.5sp" />
 
         <EditText
@@ -62,13 +72,14 @@
             android:gravity="center|top"
             android:hint="@string/enter_dream_here_text"
             android:inputType="textMultiLine"
+            android:paddingLeft="7dp"
             android:paddingTop="20sp"
+            android:paddingRight="7dp"
             android:scrollHorizontally="false"
             android:textColor="#BFBFBF"
-            android:textColorHint="#BFBFBF"
-            android:textSize="11.5sp"
 
-            />
+            android:textColorHint="#BFBFBF"
+            android:textSize="11.5sp" />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/autocomplete_dream_button"
             android:textAllCaps="false"
@@ -92,5 +103,26 @@
             android:text="@string/add_dream_text"
             android:textColor="#FFFFFF"
             android:textSize="11sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dream_image_button"
+            android:textAllCaps="false"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/rounded_corners_darkgray_background"
+            android:fontFamily="@font/poppins"
+            android:text="@string/generate_dream_image"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp" />
+
+        <ImageView
+            android:id="@+id/dreamImage"
+            android:layout_width="340dp"
+            android:layout_height="257dp"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:maxLines="10"></ImageView>
     </LinearLayout>
 </FrameLayout>
+</ScrollView>

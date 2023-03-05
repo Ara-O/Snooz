@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.aallam.openai.api.ExperimentalOpenAI
 import com.aallam.openai.api.completion.CompletionRequest
 import com.aallam.openai.api.completion.TextCompletion
+import com.aallam.openai.api.edits.EditsRequest
 import com.aallam.openai.api.image.ImageCreationURL
 import com.aallam.openai.api.image.ImageSize
 import com.aallam.openai.api.model.Model
@@ -22,7 +24,10 @@ import com.example.snooz.databinding.FragmentAddDreamBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.util.*
 
@@ -55,18 +60,6 @@ class AddDreamFragment : Fragment() {
 
         val openAI = OpenAI(BuildConfig.API_KEY)
 
-//        runBlocking {
-//
-//        val images = openAI.image( // or openAI.imageJSON
-//            creation = ImageCreationURL(
-//                prompt = "Make an image that represents this dream - I had a dream that I was floating in a giant bowl of soup. The soup was made of rainbows and unicorns, and every time I took a sip, I could hear their laughter. Suddenly, a giant spoon appeared and started chasing me around the bowl, trying to scoop me up. Just as the spoon was about to catch me, I sprouted wings and flew away, only to wake up with a strange craving for soup.",
-//                n = 2,
-//                size = ImageSize.is1024x1024
-//            )
-//        )
-//            Log.d("eaa", images.toString())
-//        }
-
         database = Firebase.database.reference
 
         //Getting the current date in DD/MM/YY format so I can add it to the firebase dreams call
@@ -92,7 +85,15 @@ class AddDreamFragment : Fragment() {
         }
 
         _binding!!.autocompleteDreamButton.setOnClickListener{
-            autocompleteDream(openAI, binding.dreamTextInput.text.toString())
+            lifecycleScope.launch{
+                autocompleteDream(openAI, binding.dreamTextInput.text.toString())
+            }
+        }
+
+        _binding!!.dreamImageButton.setOnClickListener{
+            lifecycleScope.launch {
+                generateDreamImage(openAI, binding.dreamTextInput.text.toString())
+            }
         }
         return view
     }
@@ -101,20 +102,31 @@ class AddDreamFragment : Fragment() {
         _binding = null
     }
 
-    fun autocompleteDream(openAI: OpenAI, dream: String){
-        runBlocking{
-            val models: List<Model> = openAI.models()
-            Log.d("models", models.toString())
-            val completionRequest = CompletionRequest(
-                model = ModelId("text-davinci-003"),
-                prompt = "autocorrect this statement - ${dream}",
-                echo = false
+    private suspend fun autocompleteDream(openAI: OpenAI, dream: String){
+
+        val autocorrectResult = openAI.edit(
+            request = EditsRequest(
+                model = ModelId("text-davinci-edit-001"),
+                input = dream,
+                instruction = "Fix the spelling mistakes"
             )
-            val completion: TextCompletion = openAI.completion(completionRequest)
+        )
 
-            val autocorrectResult = completion.choices[0].text
 
-            binding.dreamTextInput.setText(autocorrectResult.replace("\"", ""))
-        }
+        binding.dreamTextInput.setText(autocorrectResult.choices[0].text)
+    }
+
+    @OptIn(ExperimentalOpenAI::class)
+//    in realistic version? use tag instead?
+    private suspend fun generateDreamImage(openAI: OpenAI, dream: String){
+        val images = openAI.image( // or openAI.imageJSON
+            creation = ImageCreationURL(
+                prompt = "Make an image that represents this dream - ${dream}",
+                n = 2,
+                size = ImageSize.is1024x1024
+            )
+        )
+
+        Picasso.get().load(images[0].url).into(binding.dreamImage);
     }
 }
