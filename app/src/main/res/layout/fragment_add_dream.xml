@@ -43,7 +43,7 @@
             android:textAlignment="center"
             android:textColor="#BFBFBF"
             android:textColorHint="#BFBFBF"
-            android:textSize="11.5sp" />
+            android:textSize="12sp" />
 
         <EditText
             android:id="@+id/dreamTagInput"
@@ -60,7 +60,7 @@
             android:textAlignment="center"
             android:textColor="#BFBFBF"
             android:textColorHint="#BFBFBF"
-            android:textSize="11.5sp" />
+            android:textSize="12sp" />
 
         <EditText
             android:id="@+id/dreamTextInput"
@@ -80,9 +80,9 @@
             android:textColor="#BFBFBF"
 
             android:textColorHint="#BFBFBF"
-            android:textSize="11.5sp" />
+            android:textSize="12sp" />
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/autocomplete_dream_button"
+            android:id="@+id/autocorrect_dream_button"
             android:textAllCaps="false"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
 
         <ImageView
             android:id="@+id/dreamImage"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:layout_width="340dp"
             android:layout_height="257dp"
             android:layout_marginTop="20sp"

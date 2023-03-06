@@ -2,24 +2,18 @@ package com.example.snooz
 
 import android.icu.text.SimpleDateFormat
 import android.icu.util.Calendar
-import android.opengl.Visibility
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.aallam.openai.api.ExperimentalOpenAI
-import com.aallam.openai.api.completion.CompletionRequest
-import com.aallam.openai.api.completion.TextCompletion
 import com.aallam.openai.api.edits.EditsRequest
 import com.aallam.openai.api.image.ImageCreationURL
 import com.aallam.openai.api.image.ImageSize
-import com.aallam.openai.api.model.Model
 import com.aallam.openai.api.model.ModelId
 import com.aallam.openai.client.OpenAI
 import com.example.snooz.databinding.FragmentAddDreamBinding
@@ -28,10 +22,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import java.util.*
 
 //Without id, Dream class is with id tag cause getting id from firebase
@@ -53,7 +44,6 @@ class AddDreamFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var database: DatabaseReference
 
-    @OptIn(ExperimentalOpenAI::class)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -81,7 +71,7 @@ class AddDreamFragment : Fragment() {
                     requireActivity(), R.color.white)).show()
 
             }else {
-                val currentDreamData = DreamData(binding.dreamNameInput.text.toString(), binding.dreamTagInput.text.toString(), binding.dreamTextInput.text.toString(), formattedDateTime);
+                val currentDreamData = DreamData(binding.dreamNameInput.text.toString(), binding.dreamTagInput.text.toString(), binding.dreamTextInput.text.toString(), formattedDateTime)
                 database.child("/${sharedPreferencesId}/dreams").push().setValue(currentDreamData)
 
                 Snackbar.make(binding.addDreamLayout, "Dream Added Successfully", Snackbar.LENGTH_LONG).setBackgroundTint(ContextCompat.getColor(requireContext(), R.color.dark_gray)).setTextColor(ContextCompat.getColor(
@@ -94,9 +84,9 @@ class AddDreamFragment : Fragment() {
             }
         }
 
-        _binding!!.autocompleteDreamButton.setOnClickListener{
+        _binding!!.autocorrectDreamButton.setOnClickListener{
             lifecycleScope.launch{
-                autocompleteDream(openAI, binding.dreamTextInput.text.toString())
+                autocorrectDream(openAI, binding.dreamTextInput.text.toString())
             }
         }
 
@@ -112,16 +102,14 @@ class AddDreamFragment : Fragment() {
         _binding = null
     }
 
-    private suspend fun autocompleteDream(openAI: OpenAI, dream: String){
+    private suspend fun autocorrectDream(openAI: OpenAI, dream: String){
         val autocorrectResult = openAI.edit(
             request = EditsRequest(
                 model = ModelId("text-davinci-edit-001"),
                 input = dream,
-                instruction = "Fix the spelling mistakes"
+                instruction = "Fix the spelling and grammar mistakes"
             )
         )
-
-
         binding.dreamTextInput.setText(autocorrectResult.choices[0].text)
     }
 
@@ -130,7 +118,7 @@ class AddDreamFragment : Fragment() {
     private suspend fun generateDreamImage(openAI: OpenAI, dream: String){
         val images = openAI.image( // or openAI.imageJSON
             creation = ImageCreationURL(
-                prompt = "Make an image that represents this dream - ${dream}",
+                prompt = "Create a dreamy high quality rendition of this prompt - ${dream}",
                 n = 2,
                 size = ImageSize.is1024x1024
             )
